@@ -32,9 +32,19 @@ struct TimerView: View {
                         .font(.title)
                         .multilineTextAlignment(.center)
                 } else {
-                    Text("\(Int(timerAmount)) seconds")
-                        .font(.title)
-                        .multilineTextAlignment(.center)
+                    VStack {
+                        Text("\(Int(timerAmount)) seconds")
+                            .font(.title)
+                            .multilineTextAlignment(.center)
+                        Button {
+                            startTimer = true
+                            timeRemaining = timerAmount
+                        } label: {
+                            Text("Start")
+                                .font(.title)
+                        }
+                        .padding(.top, 1.0)
+                    }
                 }
                 Circle()
                     .trim(from: 0.0, to: completionAmount)
@@ -61,14 +71,6 @@ struct TimerView: View {
                         }
                     }
             }
-            Button {
-                startTimer = true
-                timeRemaining = timerAmount
-            } label: {
-                Text("Start")
-                    .padding(20)
-            }
-            .contentShape(Rectangle())
         }
     }
 }
