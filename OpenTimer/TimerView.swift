@@ -8,12 +8,20 @@
 import SwiftUI
 
 struct TimerView: View {
+    @State var timerAmount: Float = 60.0 // In seconds
+    @State var startTimer = false
     @State private var completionAmount = 1.0
-        let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+    
+    
+    var tickCount: Double {
+        let totalTicks = timerAmount / 0.1
+        return 1.0 / Double(totalTicks)
+    }
     
     var body: some View {
         VStack {
-            Text("1 minutes")
+            Text("\(Int(timerAmount)) seconds")
                 .font(.title)
                 .multilineTextAlignment(.center)
             Circle()
@@ -22,14 +30,23 @@ struct TimerView: View {
                 .frame(width: 200, height: 200)
                 .rotationEffect(.degrees(-90))
                 .onReceive(timer) { _ in
-                    withAnimation {
-                        if completionAmount == 0.0 {
-                            // Play a notification sound and display some text
-                        } else {
-                            completionAmount -= 0.02
+                    if startTimer {
+                        withAnimation {
+                            if completionAmount == 0.0 {
+                                // Play a notification sound and display some text
+                            } else {
+                                completionAmount -= tickCount
+                            }
                         }
                     }
                 }
+            Button {
+                startTimer = true
+            } label: {
+                Text("Start")
+                    .padding(20)
+            }
+            .contentShape(Rectangle())
         }
     }
 }
