@@ -8,18 +8,28 @@
 import SwiftUI
 
 struct TimerView: View {
+    @State private var completionAmount = 1.0
+        let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
     var body: some View {
         VStack {
-            Text("30 minutes")
+            Text("1 minutes")
                 .font(.title)
                 .multilineTextAlignment(.center)
             Circle()
-                .fill(.blue)
-                .frame(width: 300, height: 300)
-            Circle()
-                .trim(from: 0, to: 0.5)
+                .trim(from: 0.0, to: completionAmount)
                 .stroke(.blue, lineWidth: 20)
                 .frame(width: 200, height: 200)
+                .rotationEffect(.degrees(-90))
+                .onReceive(timer) { _ in
+                    withAnimation {
+                        if completionAmount == 0.0 {
+                            // Play a notification sound and display some text
+                        } else {
+                            completionAmount -= 0.02
+                        }
+                    }
+                }
         }
     }
 }
