@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F9037B52996B9C5002A5807 /* TimerGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9037B42996B9C5002A5807 /* TimerGrid.swift */; };
 		4FD6B47B2992C551006FCFAB /* OpenTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD6B47A2992C551006FCFAB /* OpenTimerApp.swift */; };
 		4FD6B47D2992C551006FCFAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD6B47C2992C551006FCFAB /* ContentView.swift */; };
 		4FD6B47F2992C552006FCFAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FD6B47E2992C552006FCFAB /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F9037B42996B9C5002A5807 /* TimerGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerGrid.swift; sourceTree = "<group>"; };
 		4FD6B4772992C551006FCFAB /* OpenTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FD6B47A2992C551006FCFAB /* OpenTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTimerApp.swift; sourceTree = "<group>"; };
 		4FD6B47C2992C551006FCFAB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			children = (
 				4FD6B47A2992C551006FCFAB /* OpenTimerApp.swift */,
 				4FD6B48A2992D885006FCFAB /* TimerView.swift */,
+				4F9037B42996B9C5002A5807 /* TimerGrid.swift */,
 				4FD6B47C2992C551006FCFAB /* ContentView.swift */,
 				4FD6B47E2992C552006FCFAB /* Assets.xcassets */,
 				4FD6B4802992C552006FCFAB /* Preview Content */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FD6B48B2992D885006FCFAB /* TimerView.swift in Sources */,
+				4F9037B52996B9C5002A5807 /* TimerGrid.swift in Sources */,
 				4FD6B47D2992C551006FCFAB /* ContentView.swift in Sources */,
 				4FD6B47B2992C551006FCFAB /* OpenTimerApp.swift in Sources */,
 			);

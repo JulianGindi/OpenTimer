@@ -64,6 +64,8 @@ struct TimerView: View {
                         }
                     }
                     .onReceive(mainTimer) { _ in
+                        // Hook for counting down the main timer and playing an alert sound
+                        // once it has completed
                         if startTimer {
                             if timeRemaining > 0.0 {
                                 timeRemaining -= 1.0
