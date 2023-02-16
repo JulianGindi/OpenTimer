@@ -36,14 +36,29 @@ struct TimerView: View {
                         Text("\(Int(timerAmount)) seconds")
                             .font(.title)
                             .multilineTextAlignment(.center)
-                        Button {
-                            startTimer = true
-                            timeRemaining = timerAmount
-                        } label: {
-                            Text("Start")
-                                .font(.title)
+                        
+                        
+                        if !startTimer {
+                            Button {
+                                startTimer = true
+                                timeRemaining = timerAmount
+                            } label: {
+                                Text("Start")
+                                    .font(.title)
+                            }
+                            .padding(.top, 1.0)
+                        } else {
+                            Button {
+                                startTimer = false
+                                timeRemaining = timerAmount
+                            } label: {
+                                Text("Reset")
+                                    .font(.title)
+                            }
+                            .padding(.top, 1.0)
                         }
-                        .padding(.top, 1.0)
+                        
+                        
                     }
                 }
                 Circle()

@@ -9,7 +9,12 @@ import SwiftUI
 
 struct TimerGrid: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Grid {
+            GridRow {
+                TimerView(timerAmount: 30)
+            }
+        }
+        .frame(width: 10.0, height: 10.0)
     }
 }
 
